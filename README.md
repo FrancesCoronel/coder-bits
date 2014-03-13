@@ -1,12 +1,13 @@
 BITS
 ====
 
+FVCproductions
 
 C Bits, C++ Bits, Java Bits, Python Bits
 
-Uploaded by FVCproductions for your viewing pleasure.
+Uploaded for your viewing pleasure.
 
-Problems can also be found on my Wordpress at http://fvcproductions.wordpress.com/category/programming-fun/
+Problems can also be found on my Wordpress at http://fvcproductions.wordpress.com/category/tech-deck/
 
 Enjoy and share!
 

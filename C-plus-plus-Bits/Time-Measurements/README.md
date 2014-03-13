@@ -7,7 +7,7 @@ Time Measurements
 
 Part 1 of C++ Bits
 
-Find the program instructions here: http://fvcproductions.wordpress.com/2013/07/28/c-plus-plus-bits-time-measurements/
+Find the program instructions here: http://fvcproductions.wordpress.com/category/c-bits-2/
 
 Enjoy and share!
 

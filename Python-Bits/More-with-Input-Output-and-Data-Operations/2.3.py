@@ -2,7 +2,8 @@
 
 Problem 2.3 - Time calculation I
 
-Write a program where you can enter from keyboard values for hours and minutes. Your program should compute and print on screen resulting total number of minutes.
+Write a program where you can enter from keyboard values for hours and minutes. 
+Your program should compute and print on screen resulting total number of minutes.
 
 """
 

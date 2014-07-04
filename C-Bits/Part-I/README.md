@@ -1,4 +1,4 @@
-# BITS
+# C Bits I
 
 * **Author**: [FVCproductions][]
 * **Source Code**: [Github][]
@@ -9,9 +9,9 @@ Copyright is free for personal and commercial use.
 
 ## Description
 
-Bits for C, C++, Java, and Python
+Part 1 of C Bits
 
-Problems can also be found on my Wordpress under Programming Bits [here][]
+The problems for this set can also be found on my Wordpress under Programming Bits [here][]
 
 ## Dates
 
@@ -19,4 +19,4 @@ Problems can also be found on my Wordpress under Programming Bits [here][]
 
 [FVCProductions]: http://fvcproductions.wordpress.com
 [Github]: https://github.com/fvcproductions
-[here]: http://fvcproductions.wordpress.com/category/tech-deck/
+[here]: http://fvcproductions.wordpress.com/2013/09/20/c-bits-getting-started/

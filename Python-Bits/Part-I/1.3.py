@@ -10,7 +10,7 @@
 	
 """
 
-name = "Frances Coronel"
+name = "FVCproductions"
 major = "Computer Science"
 
 print (name, major)

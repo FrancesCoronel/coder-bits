@@ -1,4 +1,4 @@
-//Frances Coronel
+//FVCproductions
 //Calculates size of clothing
 
 #include <iostream>

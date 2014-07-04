@@ -1,4 +1,4 @@
-//Frances Coronel
+//FVCproducitons
 //Reads numbers into an array of integers 
 //and then manipulates the array
 //Program 4

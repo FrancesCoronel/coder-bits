@@ -1,6 +1,6 @@
 //project name "Solid Geometry"
 //calculates volume, surface area, and cross section of sphere
-//name: Frances Coronel
+//FVCproductions
 //type of input: radius, surface_ara, volume, cross_section
 //type of output: actual volume, surface_area, and cross_section calculated
 //brief description of algorithm: calculate surface area, volume, or cross-sectional area of sphere

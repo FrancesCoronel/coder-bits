@@ -1,6 +1,6 @@
 //project name "Time Measurements"
 //reads time measurements from the keyboard in hours and minutes
-//name: Frances Violet Coronel
+//FVCproductions
 //type of input: hours 1, hours 2, minutes 1, minutes 2
 //type of output: time in hours and minutes and time as a real number
 //brief description of algorithm: adds two data sets of hours and minutes 

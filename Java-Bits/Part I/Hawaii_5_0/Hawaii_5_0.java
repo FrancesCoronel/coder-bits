@@ -12,7 +12,7 @@ public class Hawaii_5_0 {
 		
 		Scanner keyboard = new Scanner(System.in); // creating Scanner object
 		
-		System.out.println("Hello there, welcome to Frances's program! \n");
+		System.out.println("Hello there, welcome to my program! \n");
 		
 		// reading in int variables of a, b, and r by prompting user while defining them
 		

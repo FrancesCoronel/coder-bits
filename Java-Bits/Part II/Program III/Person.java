@@ -1,5 +1,5 @@
 /*
-//FVCproductions
+FVCproductions
 Purpose of this program is to test my concepts on inheritance as well as manipulation objects in an array.
 In the program there's an application that manages a list of the Person class using an array classes using the subclasses Student and Faculty to assign values to each student's info.
 */
@@ -121,8 +121,6 @@ public class Person {
 }
 
 /*
-Frances Coronel
-CS152
 Person.java - Class
 This class serves as the blueprint for the Application called CORONEL_FRANCES_P1.java
 This class has methods that calculate various options depending on the data for each person listed in a text file

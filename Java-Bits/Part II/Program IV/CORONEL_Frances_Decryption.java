@@ -1,5 +1,5 @@
 /*
-Frances Coronel
+FVCproductions
 Program Purpose: To prevent someone from reading a secret message, an encryption and decryption algorithm is created.
 As a new developer, you are to write a decryption program that reverses lines in a file, and reverse numbers in each line. Each of numbers represents an ascii character code, e.g. 66 is ‘A’, 97 is ‘a’, which you will print them at the end of the program.
 */
@@ -9,14 +9,10 @@ import java.io.*;
 import java.util.*;
 import java.lang.*;
 
-public class CORONEL_Frances_Decryption {
+public class Decryption {
 	
 	//throwing IOException in main method for file reading
 	public static void main(String[] args) throws IOException {
-		
-		
-		//required statements
-		System.out.println("I, FRANCES, did not recieve any assistance from anyone other than Dr. Boonthum-Denecke.\n");
 		
 		//declaring scanner object called keyboard
 		Scanner keyboard = new Scanner(System.in);
@@ -29,18 +25,18 @@ public class CORONEL_Frances_Decryption {
 
 		//declaring an int variable that contains the number of lines the text file holds
 		//number found on first line of text
-		int CORONEL_numLines_9124 = Integer.parseInt(input.readLine());
+		int numLines = Integer.parseInt(input.readLine());
 		
 		//declaring String stacks for odd/even lines
-		Stack<String> CORONEL_ODD_LineStack = new Stack<String>();
-		Stack<String> CORONEL_EVEN_LineStack = new Stack<String>();
+		Stack<String> ODD_LineStack = new Stack<String>();
+		Stack<String> EVEN_LineStack = new Stack<String>();
 		
-		//declaring integer type Stack for CORONEL_NumberStack
-		Stack<Integer> CORONEL_NumberStack = new Stack<Integer>();	
+		//declaring integer type Stack for NumberStack
+		Stack<Integer> NumberStack = new Stack<Integer>();	
 		//declaring String variable line		
 		String line = "";
 				
-		//delcaring boolean holder for odd/even lines implementation using CORONEL_numLines_9124
+		//delcaring boolean holder for odd/even lines implementation using numLin3w
 		boolean ifOdd = true;
 		
 		//while loop for reading all lines from text file
@@ -49,7 +45,7 @@ public class CORONEL_Frances_Decryption {
 			if (ifOdd) {
 				
 				//pushes line to <oddStack>
-				CORONEL_ODD_LineStack.push(line);
+				ODD_LineStack.push(line);
 				ifOdd = false;
 
 			}
@@ -57,32 +53,32 @@ public class CORONEL_Frances_Decryption {
 			else {
 				
 				//pushes line to <evenStack>
-				CORONEL_EVEN_LineStack.push(line); 
+				EVEN_LineStack.push(line); 
 				ifOdd = true;
 
 			}
 		
 		}
 		
-		if (CORONEL_numLines_9124 % 2 == 0)
+		if (numLines % 2 == 0)
 			ifOdd = false;
 		else 
 			ifOdd = true;
 		
 		//while loop for going through <odd> stack
-		while (!CORONEL_ODD_LineStack.isEmpty()) {
+		while (!ODD_LineStack.isEmpty()) {
 			
 			//checking whether odd or even 
 			if (ifOdd) {
 				
-				line = CORONEL_ODD_LineStack.pop();
+				line = ODD_LineStack.pop();
 				ifOdd = false;	
 			
 			}
 			
 			else {
 				
-				line = CORONEL_EVEN_LineStack.pop();
+				line = EVEN_LineStack.pop();
 				ifOdd = true;
 			}
 			
@@ -98,17 +94,17 @@ public class CORONEL_Frances_Decryption {
 				//changes each token into an integer
 				int token = Integer.parseInt(tokenizer.nextToken());
 
-				//pushing each token into CORONEL_NumberStack
-				CORONEL_NumberStack.push(token);
+				//pushing each token into NumberStack
+				NumberStack.push(token);
 				
 			}
 			
 			System.out.println();
 			
-			while (!CORONEL_NumberStack.isEmpty()) {
+			while (!NumberStack.isEmpty()) {
 				
-				//pops number out from CORONEL_NumberStack
-				int myNum = CORONEL_NumberStack.pop();
+				//pops number out from NumberStack
+				int myNum = NumberStack.pop();
 				
 				//prints out ascii character value of each value in stack
 				System.out.print((char)myNum);
@@ -117,10 +113,6 @@ public class CORONEL_Frances_Decryption {
 		
 		}
 		
-		//required statement
-		System.out.println();
-		System.out.println("\nThis program is completed by FRANCES, CS, 00319124.");
-		
 		
 	}
 }
@@ -128,20 +120,21 @@ public class CORONEL_Frances_Decryption {
 
 /* ---OUTPUT---MESSAGE_1---
 
-I, FRANCES, did not recieve any assistance from anyone other than Dr. Boonthum-Denecke.
-
 Enter filename: encrypted_message1.txt
 
-The Stack class represents a last-in-first-out (LIFO) stack of objects. It extends class Vector with five operations that allow a vector to be treated as a stack. The usual push and pop operations are provided, as well as a method to peek at the top item on the stack, a method to test for whether the stack is empty, and a method to search the stack for an item and discover how far it is from the top.When a stack is first created, it contains no items.
+The Stack class represents a last-in-first-out (LIFO) stack of objects. 
+It extends class Vector with five operations that allow a vector to be treated as a stack. 
+The usual push and pop operations are provided, 
+as well as a method to peek at the top item on the stack, 
+a method to test for whether the stack is empty, 
+and a method to search the stack for an item and discover how far it is from the top.
+When a stack is first created, it contains no items.
 
-This program is completed by FRANCES, CS, 00319124.
 
 */
 
 
 /* ---OUTPUT---MESSAGE_2---
-
-I, FRANCES, did not recieve any assistance from anyone other than Dr. Boonthum-Denecke.
 
 Enter filename: encrypted_message2.txt
 
@@ -199,7 +192,5 @@ By CARLOTTA GALL and JAMES GLANZ
 The State Department and other agencies are spending millions around the world to finance local systems, called mesh networks, as more secure alternatives to the Internet.
 
 51 Comments
-
-This program is completed by FRANCES, CS, 00319124.
 
 */

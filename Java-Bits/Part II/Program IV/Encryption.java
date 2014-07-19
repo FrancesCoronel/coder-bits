@@ -1,5 +1,5 @@
 /*
-Frances Coronel
+FVCproductions
 Program Purpose: Implement an encryption program – LASTNAME_Firstname_Encryption.java (reverse lines, reverse character, convert to ascii number).
 Steps:
 - Read each line and push in alternate stacks (odd and even)
@@ -13,13 +13,10 @@ import java.util.*;
 import java.lang.*;
 import java.lang.String;
 
-public class CORONEL_Frances_Encryption {
+public class Encryption {
 	
 	//throwing IOException in main method for file reading
 	public static void main(String[] args) throws IOException {
-		
-		//required statements
-		System.out.println("I, FRANCES, did not recieve any assistance from anyone other than Dr. Boonthum-Denecke.\n");
 		
 		//declaring scanner object called keyboard
 		Scanner keyboard = new Scanner(System.in);
@@ -35,13 +32,13 @@ public class CORONEL_Frances_Encryption {
 		String line = "";
 		
 		//declaring String stacks for odd/even lines
-		Stack<String> CORONEL_ODD_LineStack = new Stack<String>();
-		Stack<String> CORONEL_EVEN_LineStack = new Stack<String>();
+		Stack<String> ODD_LineStack = new Stack<String>();
+		Stack<String> EVEN_LineStack = new Stack<String>();
 		
-		//declaring integer type Stack for CORONEL_NumberStack
-		Stack<Character> CORONEL_NumberStack = new Stack<Character>();
+		//declaring integer type Stack for NumberStack
+		Stack<Character> NumberStack = new Stack<Character>();
 		
-		//delcaring boolean holder for odd/even lines implementation using CORONEL_numLines_9124
+		//delcaring boolean holder for odd/even lines implementation using numLines
 		boolean ifOdd = true;
 		
 		int count = 0;
@@ -53,7 +50,7 @@ public class CORONEL_Frances_Encryption {
 			if (ifOdd) {
 				
 				//pushes line to <oddStack>
-				CORONEL_ODD_LineStack.push(line);
+				LineStack.push(line);
 				ifOdd = false;
 
 			}
@@ -61,7 +58,7 @@ public class CORONEL_Frances_Encryption {
 			else {
 				
 				//pushes line to <evenStack>
-				CORONEL_EVEN_LineStack.push(line); 
+				LineStack.push(line); 
 				ifOdd = true;
 
 			}
@@ -70,27 +67,27 @@ public class CORONEL_Frances_Encryption {
 		
 		//declaring an int variable that contains the number of lines the text file holds
 		//number found on first line of text
-		int CORONEL_numLines_9124 = count;
+		int numLines = count;
 		
-		if (CORONEL_numLines_9124 % 2 == 0)
+		if (numLines % 2 == 0)
 			ifOdd = false;
 		else
 			ifOdd = true;
 		
 		//while loop for going through <odd> stack
-		while (!CORONEL_ODD_LineStack.isEmpty()) {
+		while (!ODD_LineStack.isEmpty()) {
 			
 			//checking whether odd or even 
 			if (ifOdd) {
 				
-				line = CORONEL_ODD_LineStack.pop();
+				line = ODD_LineStack.pop();
 				ifOdd = false;	
 			
 			}
 			
 			else {
 				
-				line = CORONEL_EVEN_LineStack.pop();
+				line = EVEN_LineStack.pop();
 				ifOdd = true;
 			
 			}
@@ -107,17 +104,17 @@ public class CORONEL_Frances_Encryption {
 				//using char array to get each individual character
 				char[] myChar = tokenizer.nextToken().toCharArray();
 				for (char c : myChar) {
-					CORONEL_NumberStack.push(c);
+					NumberStack.push(c);
 				}
 				
 			}
 			
 			System.out.println();
 			
-			while (!CORONEL_NumberStack.isEmpty()) {
+			while (!NumberStack.isEmpty()) {
 				
-				//pops number out from CORONEL_NumberStack
-				int myNum = (int)CORONEL_NumberStack.pop();
+				//pops number out from NumberStack
+				int myNum = (int)NumberStack.pop();
 				
 				//prints out ascii character value of each value in stack
 				System.out.print(myNum + " ");
@@ -126,10 +123,6 @@ public class CORONEL_Frances_Encryption {
 		
 		}
 		
-		//required statement
-		System.out.println();
-		System.out.println("\nThis program is completed by FRANCES, CS, 00319124.");
-		
 		
 	}
 }
@@ -137,10 +130,7 @@ public class CORONEL_Frances_Encryption {
 
 /* ---OUTPUT---
 
-I, FRANCES, did not recieve any assistance from anyone other than Dr. Boonthum-Denecke.
-
 Enter filename: decrypt.txt
-
 
 46 115 109 101 116 105 111 110 115 110 105 97 116 110 111 99 116 105 44 100 101 116 97 101 114 99 116 115 114 105 102 115 105 107 99 97 116 115 97 110 101 104 87 
 46 112 111 116 101 104 116 109 111 114 102 115 105 116 105 114 97 102 119 111 104 114 101 118 111 99 115 105 100 100 110 97 109 101 116 105 110 97 114 111 102 107 99 97 116 115 101 104 116 104 99 114 97 101 115 111 116 100 111 104 116 101 109 97 100 110 97 
@@ -149,7 +139,5 @@ Enter filename: decrypt.txt
 44 100 101 100 105 118 111 114 112 101 114 97 115 110 111 105 116 97 114 101 112 111 112 111 112 100 110 97 104 115 117 112 108 97 117 115 117 101 104 84 
 46 107 99 97 116 115 97 115 97 100 101 116 97 101 114 116 101 98 111 116 114 111 116 99 101 118 97 119 111 108 108 97 116 97 104 116 115 110 111 105 116 97 114 101 112 111 101 118 105 102 104 116 105 119 114 111 116 99 101 86 115 115 97 108 99 115 100 110 101 116 120 101 116 73 
 46 115 116 99 101 106 98 111 102 111 107 99 97 116 115 41 79 70 73 76 40 116 117 111 45 116 115 114 105 102 45 110 105 45 116 115 97 108 97 115 116 110 101 115 101 114 112 101 114 115 115 97 108 99 107 99 97 116 83 101 104 84 
-
-This program is completed by FRANCES, CS, 00319124.
 
 */

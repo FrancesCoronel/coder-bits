@@ -122,6 +122,6 @@ public class Person {
 
 /*
 Person.java - Class
-This class serves as the blueprint for the Application called CORONEL_FRANCES_P1.java
+This class serves as the blueprint for the Application 
 This class has methods that calculate various options depending on the data for each person listed in a text file
 */

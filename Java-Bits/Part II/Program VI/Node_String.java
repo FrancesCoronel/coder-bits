@@ -1,45 +1,49 @@
-public class Node {
+public class Node_String {
  
-    private int key;
-    private Node parent;
-    private Node leftChild;
-    private Node rightChild;
- 
-    public Node(int key, Node leftChild, Node rightChild) {
+    private String key;
+    private Node_String parent;
+    private Node_String leftChild;
+    private Node_String rightChild;
+
+    public Node_String(String str) {
+        key = str;
+    }
+
+    public Node_String(String str, Node_String leftChild, Node_String rightChild) {
         this.setKey(key);
         this.setLeftChild(leftChild);
         this.setRightChild(rightChild);
     }
  
-    public void setKey(int key) {
+    public void setKey(String key) {
         this.key = key;
     }
  
-    public int getKey() {
+    public String getKey() {
         return key;
     }
  
-    public void setParent(Node parent) {
+    public void setParent(Node_String parent) {
         this.parent = parent;
     }
  
-    public Node getParent() {
+    public Node_String getParent() {
         return parent;
     }
  
-    public void setLeftChild(Node leftChild) {
+    public void setLeftChild(Node_String leftChild) {
         this.leftChild = leftChild;
     }
  
-    public Node getLeftChild() {
+    public Node_String getLeftChild() {
         return leftChild;
     }
  
-    public void setRightChild(Node rightChild) {
+    public void setRightChild(Node_String rightChild) {
         this.rightChild = rightChild;
     }
  
-    public Node getRightChild() {
+    public Node_String getRightChild() {
         return rightChild;
     }
 }

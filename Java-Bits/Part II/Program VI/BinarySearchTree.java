@@ -2,7 +2,7 @@ public class BinarySearchTree {
  
     private Node root;
  
-    public void insert(int key) {
+    public void insert(String key) {
         insert(new Node(key, null, null));
     }
  

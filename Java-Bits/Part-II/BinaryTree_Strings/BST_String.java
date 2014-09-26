@@ -95,8 +95,6 @@ public class BST_String {
 
         System.out.println("\nPostorder Traversal:");
         bst.postorderTraversal();
-
-        System.out.println("\n\nThis program is completed by FRANCES, CS, 00319124.");
     }
 }
 

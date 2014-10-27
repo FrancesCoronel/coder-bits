@@ -301,7 +301,7 @@ public class Tic_Tac_Toe {
 		if (turn == 0) //user won
 			System.out.println("Good for you! You won!");
 		else if (turn == 1) //computer won
-			System.out.println("Haha, you lost! Better luck next time?");
+			System.out.println("Haha sucker, you lost! Better luck next time?");
 		else //tie
 			System.out.println("Looks like it was a tie");
 		

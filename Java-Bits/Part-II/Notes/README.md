@@ -1,4 +1,4 @@
-# Uni-Notes
+# Notes
 
 * **Author**: [FVCproductions][]
 * **Source Code**: [Github][]
@@ -9,7 +9,7 @@ Copyright is free for personal and commercial use.
 
 ## Description
 
-Notes I took for my CS classes in Uni
+Notes I took for my CS classes in University.
 
 ## Dates
 

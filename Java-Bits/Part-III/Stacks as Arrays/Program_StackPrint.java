@@ -89,7 +89,10 @@ public class Program_StackPrint {
 			//value at temporary stack index (0 at first) equals to value at array index (0 at first as well)
 			temp[i] = theArray[i];
 			
-			//value at array stack index (0 at first) = equals to value at array stack index which is first decremented by i from top-1 (which is at index 7)
+			// value at array stack index (0 at first) = equals to value at array stack index which is first decremented by i from top-1 (which is at index 7)
+			
+			// 
+
 			theArray[i] = theArray[7 - i];
 			
 			//this decremented index which we went over in the last statment is then equated to the value at temporary stack index

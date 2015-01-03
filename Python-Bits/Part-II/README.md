@@ -1,14 +1,22 @@
-Python Bits 2
-=============
 
-FVCproductions
 
-More with Input, Output, and Data Operations
+# Python Bits 2
 
-Part 2 of Python Bits
+* **Author**: [FVCproductions][]
+* **Source Code**: [Github][]
 
-Program instructions can be found here within the source code files.
+## License &copy;
 
-Enjoy and share!
+Copyright is free for personal and commercial use. 
 
-Cheers.
+### More with Input, Output, and Data Operations
+
+* Part 2 of Python Bits
+	* Program instructions can be found within the files.
+
+## Dates
+
+2013 - 2014
+
+[FVCProductions]: http://fvcproductions.wordpress.com
+[Github]: https://github.com/fvcproductions

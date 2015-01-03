@@ -1,4 +1,4 @@
-# Java Bits Part II
+# Java Bits Part III
 
 * **Author**: [FVCproductions][]
 * **Source Code**: [Github][]
@@ -13,7 +13,7 @@ Separate from [A Cup of Java][],
 
 ### Java Bits Part II
 
-contains files typically found in the **2nd semester of a beginning Java programming class**
+contains files typically found in the **1st semester of a Data Structures class using Java**
 
 ## Dates
 

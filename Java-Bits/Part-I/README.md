@@ -13,9 +13,7 @@ Separate from [A Cup of Java][],
 
 ### Java Bits Part I
 
-contains files typically found in the
-
-1st semester of a beginning Java programming class
+contains files typically found in the **1st semester of a beginning Java programming class**
 
 ## Dates
 
@@ -23,3 +21,4 @@ contains files typically found in the
 
 [FVCProductions]: http://fvcproductions.wordpress.com
 [Github]: https://github.com/fvcproductions
+[A Cup of Java]: https://github.com/fvcproductions/cup-of-java

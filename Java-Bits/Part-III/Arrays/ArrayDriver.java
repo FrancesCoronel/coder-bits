@@ -1,5 +1,5 @@
 /*
-Frances Coronel
+FVCproductions
 CSC 215
 Data Structures
 Array Methods
@@ -11,7 +11,7 @@ Due Date: September 16, 2014 before Midnight
 import java.util.*;
 import java.io.*;
 
-public class ArrayDriverFC {
+public class ArrayDriver {
 	
 	//assigning pre-defined array size to variable "size"
 
@@ -19,35 +19,35 @@ public class ArrayDriverFC {
 
 	public static void main(String[] args) throws IOException {
 
-		//creating String array called arrayFC
+		//creating String array called array
 		//fixed size of 12
 
-		String[] arrayFC = new String[size];
+		String[] array = new String[size];
 
-		//storeArrayFC
+		//storeArray
 		//stores elements into single dimensional array structure of Strings
 
 		System.out.println("Storing Array...\n");
 		
-		storeArrayFC(arrayFC, "Names.txt");
+		storeArray(array, "Names.txt");
 		
-		//printArrayFC
+		//printArray
 		//prints out all elements of array structure
 		//checks if structure is empty
 		//if empty, prints out message
 
 		System.out.print("Printing Array: ");
-		printArrayFC(arrayFC);
+		printArray(array);
 		System.out.print("\n");
 
-		//searchArrayFC
+		//searchArray
 		//accepts a String
 		//searches array structure for element
 		//returns boolean (True or False)
 
 		System.out.print("\nSearching Array for the element 'searching': ");
 		
-		System.out.print(searchArrayFC(arrayFC, "searching"));
+		System.out.print(searchArray(array, "searching"));
 		
 		System.out.println();
 
@@ -57,7 +57,7 @@ public class ArrayDriverFC {
 
 		System.out.print("\nInstances found for the element 'instance': ");
 		
-		System.out.print(instancesFound(arrayFC, "instance"));
+		System.out.print(instancesFound(array, "instance"));
 		
 		System.out.println();
 
@@ -68,7 +68,7 @@ public class ArrayDriverFC {
 		
 		String[] copied = new String[size];
 
-		copyMyArray(arrayFC, copied);
+		copyMyArray(array, copied);
 
 		//isArrayFull
 		//returns boolean
@@ -76,60 +76,54 @@ public class ArrayDriverFC {
 
 		System.out.print("\nIs array full: ");
 		
-		System.out.print(isArrayFull(arrayFC));
+		System.out.print(isArrayFull(array));
 
 		//isArrayEmpty
 		//returns boolean
 		//to determine if array is empty or not
 
 		System.out.print("\n\nIs array empty: ");
-		System.out.print(isArrayEmpty(arrayFC));
+		System.out.print(isArrayEmpty(array));
 
 		//arraySize
 		//returns array size (how many elements in array structure)
 
 		System.out.print("\n\nArray size: ");
-		arraySize(arrayFC);
+		arraySize(array);
 
 		//createSentence
 		//returns sentence from words currently stored in array structure
 		
 		System.out.print("\nSentence created: ");
-		createSentence(arrayFC);
+		createSentence(array);
 		System.out.print("\n");
 		
-		//addToArrayFC
+		//addToArray
 		//adds element to array structure
 		//checks if structure is full
 		//if full, causes an exception
 
 		System.out.print("\nAdding to Array... ");
 		
-		addToArrayFC(arrayFC, "Adda");
+		addToArray(array, "Adda");
 		
 		System.out.print("\n");
 
-		//deleteFromArrayFC
+		//deleteFromArray
 		//deletes element from array structure
 		//checks if structure is empty
 		//if empty, causes an exception
 
 		System.out.println("\nDeleting from Array... ");
 
-		deleteFromArrayFC(arrayFC);
-
-		//include statement at end of your program
-		//I (name) have completed this program without any help from fellow students, 
-		//except for the approved departmental tutors or my instructor.  
-
-		System.out.println("\nI Frances have completed this program without any help from fellow students, except for the approved departmental tutors or my instructor.");
+		deleteFromArray(array);
 
 	}
 	
-	//storeArrayFC
+	//storeArray
 	//stores elements into single dimensional array structure of Strings
 	
-	public static void storeArrayFC(String[] array, String fileName) throws IOException {
+	public static void storeArray(String[] array, String fileName) throws IOException {
 
 		Scanner fileReader = new Scanner(new File(fileName));
 		
@@ -145,12 +139,12 @@ public class ArrayDriverFC {
 
 	}
 
-	//printArrayFC
+	//printArray
 	//prints out all elements of array structure
 	//checks if structure is empty
 	//if empty, prints out message
 
-	public static void printArrayFC(String[] array) {
+	public static void printArray(String[] array) {
 
 		int count = 0;
 		
@@ -175,12 +169,12 @@ public class ArrayDriverFC {
 
 	}
 
-	//addToArrayFC
+	//addToArray
 	//adds element to array structure
 	//checks if structure is full
 	//if full, causes an exception
 
-	public static void addToArrayFC(String[] array, String element) {
+	public static void addToArray(String[] array, String element) {
 		
 		int count = 0;
 		
@@ -199,12 +193,12 @@ public class ArrayDriverFC {
 
 	}
 
-	//deleteFromArrayFC
+	//deleteFromArray
 	//deletes element from array structure
 	//checks if structure is empty
 	//if empty, causes an exception
 
-	public static void deleteFromArrayFC(String[] array) {
+	public static void deleteFromArray(String[] array) {
 
 		int i = 0;
 		int j = 0;
@@ -227,12 +221,12 @@ public class ArrayDriverFC {
 
 	}
 
-	//searchArrayFC
+	//searchArray
 	//accepts a String
 	//searches array structure for element
 	//returns boolean (True or False)
 
-	public static boolean searchArrayFC(String[] array, String element) {
+	public static boolean searchArray(String[] array, String element) {
 
 		for(int i = 0; i < size; i++) {
 

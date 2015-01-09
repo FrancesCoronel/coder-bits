@@ -1,6 +1,6 @@
 /*
-Frances Coronel
-Post Review Part 2
+FVCproductions
+More Revisions
 Exam 1
 CSC 251
 */
@@ -8,7 +8,7 @@ CSC 251
 import java.util.Scanner;
 
 
-public class Stack_FCoronel_Revision {
+public class Stack_Revision {
 
 	private int size;
 	private int[] stack;
@@ -17,7 +17,7 @@ public class Stack_FCoronel_Revision {
 
 	//creating constructor to reference in main method later
 	
-	public Stack_FCoronel_Revision (int num) {
+	public Stack_Revision (int num) {
 		size = num;
 		stack =new int[size];
 		top = -1;

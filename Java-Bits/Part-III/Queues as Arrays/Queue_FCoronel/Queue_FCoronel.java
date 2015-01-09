@@ -1,5 +1,5 @@
 /*
-Frances Coronel
+FVCproductions
 Queue Array Implementation
 */
 
@@ -8,7 +8,7 @@ Queue Array Implementation
 import java.util.*;
 import java.io.*;
 
-public class Queue_FCoronel {
+public class Queue {
 	
 	// declaring and initializing necessary variables
 	
@@ -23,7 +23,7 @@ public class Queue_FCoronel {
 	
 	// constructor should create an empty queue structure - size 8
 	
-	public Queue_FCoronel() {
+	public Queue() {
 		
 		queue = new int[size];
 		front = 0;
@@ -155,7 +155,7 @@ public class Queue_FCoronel {
 
 		// creating object in driver called 'theQueue'
 		
-		Queue_FCoronel theQueue = new Queue_FCoronel();  // queue holds 5 items
+		Queue theQueue = new Queue();  // queue holds 5 items
 		
 		System.out.println("---Queue Array Implementation---\n");
 		

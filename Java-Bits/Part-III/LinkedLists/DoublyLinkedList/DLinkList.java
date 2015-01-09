@@ -1,13 +1,13 @@
 /*
 
-FRANCES CORONEL
+FVCproductions
 CSC 251
 Data Structures
 November 20, 2014
 
 Detailed Description:
 
-	- DLinkListFC is the driver of this program and has the main method which reads from a text file called list.txt and executes each text commmand. 
+	- DLinkList is the driver of this program and has the main method which reads from a text file called list.txt and executes each text commmand. 
  	- Comments are strewn throughout.
 	- This particular driver utilizes the following possible commands for the double linked list:
 		- clear()
@@ -22,9 +22,6 @@ Detailed Description:
 		- ItemNotPresentException - throws error if item is not in list
 		- EmptyListException - throws error if list is empty
 
-"I, FRANCES CORONEL, have completed this program individually without any student or faculty support. 
-The penalty for not completing this program individually is a zero for the program and admission of CHEATING in my student file."
-
 */
 
 // importing necessary classes
@@ -33,11 +30,11 @@ import java.util.Scanner; //Scanner class
 import java.io.*; //input output
 import java.util.StringTokenizer; //String Tokenizer class
 
-public class DLinkListFC {
+public class DLinkList {
 	
 	public static void main(String[] args) throws IOException {
 		
-		MyLinkedListFC myList = new MyLinkedListFC(); //creating new object using class file
+		MyLinkedList myList = new MyLinkedList(); //creating new object using class file
 		
 		String command; //commands are read from each line from the text file
 		String stringWord = "";					
@@ -136,7 +133,7 @@ public class DLinkListFC {
 						System.out.println("  ***Successful!***");
 						System.out.println();
 					}
-					catch(MyLinkedListExceptionFC notPresent) //if item not present, prints unsuccessful message
+					catch(MyLinkedListException notPresent) //if item not present, prints unsuccessful message
 					{
 						System.out.println("\t***Unsuccessful*** \n" + notPresent.getMessage());		
 						System.out.print("List: ");
@@ -144,7 +141,7 @@ public class DLinkListFC {
 						
 					}
 				}
-				catch(MyLinkedListExceptionFC underflow) //if list is empty, prints unsuccessful message
+				catch(MyLinkedListException underflow) //if list is empty, prints unsuccessful message
 				{
 					System.out.println("\t***Unsuccessful*** \n" + underflow.getMessage());
 					System.out.println();
@@ -168,7 +165,7 @@ public class DLinkListFC {
 						System.out.println();
 					}
 					
-					catch(MyLinkedListExceptionFC notPresent) { //if item not present, prints unsuccessful message
+					catch(MyLinkedListException notPresent) { //if item not present, prints unsuccessful message
 						
 						System.out.println("\t***Unsuccessful*** \n" + notPresent.getMessage());
 						System.out.print("List: ");
@@ -179,7 +176,7 @@ public class DLinkListFC {
 
 				}
 				
-				catch(MyLinkedListExceptionFC underflow) { //if list is empty, prints unsuccessful message
+				catch(MyLinkedListException underflow) { //if list is empty, prints unsuccessful message
 					
 					System.out.println("\t***Unsuccessful*** \n" + underflow.getMessage());
 					System.out.println();
@@ -211,12 +208,7 @@ public class DLinkListFC {
 		
 		//closing file
 		
-		readFile.close();
-		
-		//necessary statement
-		
-		System.out.println("I, FRANCES CORONEL, have completed this program individually without any student or faculty support.");
-		System.out.println("The penalty for not completing this program individually is a zero for the program and admission of CHEATING in my student file.");				
+		readFile.close();			
 	
 	}
 }

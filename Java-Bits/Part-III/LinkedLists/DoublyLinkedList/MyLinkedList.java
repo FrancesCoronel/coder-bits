@@ -1,13 +1,13 @@
 /*
 
-Frances Coronel
+FVCproductions
 CSC 251
 Data Structures
 November 20, 2014
 
 Detailed Description:
 
-	- MyLinkedListFC is the class of this program and is where all the methods are located that run the overall driver commands in the driver DLinkListFC.
+	- MyLinkedList is the class of this program and is where all the methods are located that run the overall driver commands in the driver DLinkList.
  	- Comments are strewn throughout describing each specific method. 
 	- The constructor for the Node uses only one parameter (info).
 	- This particular class has the following methods for the double linked list:
@@ -23,12 +23,9 @@ Detailed Description:
 		- ItemNotPresentException - throws error if item is not in list
 		- EmptyListException - throws error if list is empty
 
-"I, FRANCES CORONEL, have completed this program individually without any student or faculty support. The penalty for not completing this program individually is a zero for the
-program and admission of CHEATING in my student file."
-
 */
 
-public class MyLinkedListFC { //replaced with my initials so FC
+public class MyLinkedList { //replaced with my initials so 
 	
 	private static class Node<String> {
 		
@@ -49,7 +46,7 @@ public class MyLinkedListFC { //replaced with my initials so FC
 	public Node<String> position; //acts as current position
 	public Node<String> list; //acts as head				
 	
-	public MyLinkedListFC() { //replaced with my initials so FC
+	public MyLinkedList() { //replaced with my initials so 
 		
 		clear(); //clearing list for initial settings
 	
@@ -85,7 +82,7 @@ public class MyLinkedListFC { //replaced with my initials so FC
 
 		position = list; // current position equal to head
 		
-		MyLinkedListFC.Node newNode = new MyLinkedListFC.Node(aString);
+		MyLinkedList.Node newNode = new MyLinkedList.Node(aString);
 								
 		//while(!position.info.equalsIgnoreCase(aString) && position.next != null) {
 			
@@ -230,9 +227,9 @@ public class MyLinkedListFC { //replaced with my initials so FC
 		
 	}
 	
-	public void EmptyListException() throws MyLinkedListExceptionFC { //had to complete
+	public void EmptyListException() throws MyLinkedListException { //had to complete
 		
-		MyLinkedListExceptionFC underflow = new MyLinkedListExceptionFC("Error. The list is empty.");
+		MyLinkedListException underflow = new MyLinkedListException("Error. The list is empty.");
 		
 		if (isEmpty() == true) { //if list is empty
 			
@@ -244,9 +241,9 @@ public class MyLinkedListFC { //replaced with my initials so FC
 	}
 	
 	
-	public void ItemNotPresentException(String aString) throws MyLinkedListExceptionFC { //had to complete
+	public void ItemNotPresentException(String aString) throws MyLinkedListException { //had to complete
    
-		MyLinkedListExceptionFC notPresent = new MyLinkedListExceptionFC("Error. That item is not present in the linked list.");
+		MyLinkedListException notPresent = new MyLinkedListException("Error. That item is not present in the linked list.");
 
 		boolean found = false; //creating boolean called found that is initialized to false
 				

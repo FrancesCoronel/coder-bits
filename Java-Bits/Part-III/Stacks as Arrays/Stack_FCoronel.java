@@ -5,7 +5,7 @@
 import java.util.*;
 import java.io.*;
 
-public class Stack_FCoronel {
+public class Stack {
 
 	static int top = -1;
 

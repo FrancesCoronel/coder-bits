@@ -4,7 +4,7 @@ fvcproductions
 
 july 24, 2012
 
-CORONEL_BST_String.java driver prints out user's input from text file
+BST_String.java driver prints out user's input from text file
 uses user input to print trees out in certain traversal orders - pre, post, etc.
 
 Works Specifically for Strings

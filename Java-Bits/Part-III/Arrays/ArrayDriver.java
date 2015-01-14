@@ -14,6 +14,7 @@ import java.io.*;
 public class ArrayDriver {
 	
 	//assigning pre-defined array size to variable "size"
+	//testing with GitHUb
 
 	final static int size = 12;
 

@@ -85,7 +85,7 @@ public class Stack_Revision {
 	
 	public static void main(String[] args) {
 	
-		Stack_FCoronel_Revision theStack = new Stack_FCoronel_Revision(10); 				
+		Stack_Revision theStack = new Stack_Revision(10); 				
 		//java method adding element into stack
 		
 		theStack.add(3);

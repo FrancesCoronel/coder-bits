@@ -12,7 +12,7 @@ import java.util.Scanner;
 
 public class Array_SumAverage_NoMethods {
 
-	//testing with GitHub
+	//Testing
 	
 	public static void main (String []args) {
 		

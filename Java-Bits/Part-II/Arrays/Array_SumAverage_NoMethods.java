@@ -11,6 +11,8 @@ Purpose: this program is to read *7* integers and
 import java.util.Scanner;
 
 public class Array_SumAverage_NoMethods {
+
+	//testing with GitHub
 	
 	public static void main (String []args) {
 		
@@ -25,7 +27,7 @@ public class Array_SumAverage_NoMethods {
 		
 		//creating array with 7 defined as value
 		
-		int[] CORONEL_num_array = new int[7];
+		int[] num_array = new int[7];
 		
 		// read 7 integers from keyboard
 		
@@ -40,8 +42,8 @@ public class Array_SumAverage_NoMethods {
 		for (count = 0; count < 7; count++) {
 			
 			System.out.print("Enter number " + (count + 1) + ": ");
-			CORONEL_num_array[count] = keyboard.nextInt(); 
-			sum += CORONEL_num_array[count];
+			num_array[count] = keyboard.nextInt(); 
+			sum += num_array[count];
 			
 		}
 		
@@ -50,7 +52,7 @@ public class Array_SumAverage_NoMethods {
 		
 		//for loop that prints out numbers within array
 		
-		for (int my_array: CORONEL_num_array) {
+		for (int my_array: num_array) {
 			System.out.print(my_array + " ");
 		}
 		

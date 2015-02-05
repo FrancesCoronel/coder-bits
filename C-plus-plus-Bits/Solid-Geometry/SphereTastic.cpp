@@ -29,7 +29,7 @@ int main()
        if(method == 'V')                         
           {
           volume = 4.0/3.0 * PI * radius * radius * radius;
-          cout << "The volume of the sphere is:" <<volume<<endl
+          cout << "The volume of the sphere is:" <<volume<<endl;
           }
        else if(method == 'A')
           {

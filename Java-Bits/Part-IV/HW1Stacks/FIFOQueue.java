@@ -3,7 +3,7 @@ import java.util.ArrayDeque;
 /**
  * Queue object for a stack of primitive doubles.
  * 
- * @version CSE373 14sp
+ * @version CSE252 Spring 2015
  * 
  *          NOTE: The comments for this interface are horrible! You will need to
  *          write something better for your implementations.
@@ -13,7 +13,7 @@ public class FIFOQueue extends ArrayDeque<Double> {
     private static final long serialVersionUID = 1L;
 
     /**
-     * is empty?
+     * Is empty?
      */
     @Override
     public boolean isEmpty() {

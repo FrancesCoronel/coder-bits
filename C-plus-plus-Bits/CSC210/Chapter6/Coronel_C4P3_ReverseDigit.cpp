@@ -15,7 +15,7 @@ For example, given the number 7631, the function should return 1367.
 
 using namespace std;
 
-int convert(int N);
+void convert(int N);
 
 int main() {
 	
@@ -26,20 +26,31 @@ int main() {
 	
 	cout << "\n";
 
-	cout << N << " reversed is " << convert(N) << endl;
+	cout << N << " reversed is ";
+	convert(N);
 	
 }
 
-int convert(int N)
+void convert(int N)
 {
-	int convertedN = 0;
-	while (N > 0)
+	//int convertedN = 0;
+	if (N < 10)
 	{
-		convertedN = convertedN * 10 + (N % 10);
-		N = N/10;
+		cout << N;
 	}
-	return convertedN;
+	else
+	{
+		cout << N % 10;
+		convert(N/10);
+	}
 }
+//	while (N > 0)
+//	{
+//		convertedN = convertedN * 10 + (N % 10);
+//		N = N/10;
+//	}
+//	return convertedN;
+
 
 /* -SAMPLE OUTPUT-
 

@@ -15,7 +15,7 @@ Then the pattern is repeated backwards, going n back down to m. m is less than n
 
 Note that you must validate the 2 input that m is less than n.
 
-e.g. triangle ( 3, 5) will output
+e.g. triangle (3, 5) will output
 
 ***
 ****
@@ -30,37 +30,32 @@ e.g. triangle ( 3, 5) will output
 
 using namespace std;
 
-int triangle(int m, int n)
-{
-	if (m > n){
-		if (n == 1)
-		{
-			for (int i = 1; i <= m; i++)
-			{
-				for (int j = 1; j <= i; j++)
-				{
-					cout << "*";
-				}
-				cout << "\n";
-			}
-		}
-		else 
-		{
-
-			
-			for (int i = m; i >= n; i--)
-			{
-				for (int j = i; j > 1; j--)
-				{
-					cout << "*";
-				}
-				cout << "\n";
-			}
-		}
-		
+void triangle(int m, int n)
+{ 
+	// top half of stars
+	
+	for (int i = 1; i <= m; i++)
+	{
+		cout << "*";
 	}
-
-}
+	cout << "\n";
+	
+	// base case
+	
+	if (m < n) 
+	{ 
+		triangle(m+1, n);
+	}
+	
+	// bottom half of stars
+	
+	for (int i = 1; i <= m; i++)
+	{
+		cout << "*";
+	}
+	cout << "\n";
+	
+} 
 
 int main() {
 	
@@ -72,6 +67,16 @@ int main() {
 	cout << "Enter n: ";
 	cin >> n;
 	
-	cout << triangle(m,n);
+	// validation
+	
+	if (m > n)
+	{
+		cout << "\nSorry, m must be less than n";
+		return 0;
+	}
+	
+	cout << endl;
+	
+	triangle(m,n);
 	
 }

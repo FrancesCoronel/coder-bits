@@ -1,4 +1,6 @@
-Synchronous Programming
+/** 
+ * Synchronous Programming
+ */
 
 
     var _ = require("lodash");
@@ -11,7 +13,9 @@ Synchronous Programming
     console.log(squares);
     // [1, 4, 9]
   
-Asynchronous Programming
+/**
+ * Asynchronous Programming
+ */
 
 
     var getSquareAsync = function (n, done) {
@@ -31,7 +35,9 @@ Asynchronous Programming
     });
     // 9
   
-Using Async Map
+/**
+ * Using Async Map
+ */
 
 
     var async = require("async");
@@ -46,7 +52,9 @@ Using Async Map
     // [1, 4, 9]
 
   
-A More Practical Async Request
+/**
+ * A More Practical Async Request
+ */
 
 
     var request = require("request");

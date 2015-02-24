@@ -1,7 +1,7 @@
 //----------------------------------------------------------------------
 // maximum.h         by FVCproductions                 In-Class 04
 //
-// Supports Coronel_C4P4_template.cpp
+// Supports C4P4_template.cpp
 // Serves as template for maximum function
 //----------------------------------------------------------------------
 

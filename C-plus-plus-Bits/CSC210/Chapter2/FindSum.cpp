@@ -2,7 +2,7 @@
  * CSC210
  * In-Class Assignment 1
  * 1-20-15
- * Coronel_FindSum.cpp
+ * FindSum.cpp
  * FVCproductions
  * \brief Write a C++ program that calculates a sum of and product of five integers reading from a keyboard.
  */

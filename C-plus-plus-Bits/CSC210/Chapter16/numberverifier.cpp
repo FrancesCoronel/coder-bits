@@ -1,4 +1,6 @@
-// FVCproductions
+/**
+ * FVCproductions
+ */
 
 // Lab Chapter 16: numberverifier.cpp
 #include <iostream>
@@ -86,7 +88,7 @@ int main()
 		/*******************************************/
       try 
       {
-         cout << "The numbered entered was: " << castInput( input ) << endl;
+         cout << "Input: " << castInput( input ) << endl;
       }
             
       catch ( NonNumber &e )
@@ -98,7 +100,7 @@ int main()
          cout << "Invalid Input... " << f.what() << endl;
       } 
 
-      cout << "\nPlease enter a number (end-of-file to terminate): ";
+      cout << "\n\nPlease enter a number (end-of-file to terminate): ";
    } // end while
 
    cout << endl;

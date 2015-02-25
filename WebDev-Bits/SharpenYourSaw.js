@@ -2,7 +2,6 @@
  * Synchronous Programming
  */
 
-
     var _ = require("lodash");
 
     var getSquare = function (n) {
@@ -16,7 +15,6 @@
 /**
  * Asynchronous Programming
  */
-
 
     var getSquareAsync = function (n, done) {
       setTimeout(function () {
@@ -39,7 +37,6 @@
  * Using Async Map
  */
 
-
     var async = require("async");
 
     var squareAsyncMapWrong = _.map([1, 2, 3], getSquareAsync);
@@ -56,7 +53,6 @@
  * A More Practical Async Request
  */
 
-
     var request = require("request");
     var key = "TZlKw4gd1qFQhA2CbMLa";
     var urlBase = "http://thesaurus.altervista.org/service.php?language=en_US&output=json&key=" + key + "&word=";
@@ -65,6 +61,7 @@
       var responseObj = JSON.parse(body);
       console.log(JSON.stringify(responseObj, null, 2));
     });
+    
     // {
     //   "response": [
     //     {

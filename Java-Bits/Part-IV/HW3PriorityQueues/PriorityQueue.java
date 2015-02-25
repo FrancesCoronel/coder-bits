@@ -1,10 +1,10 @@
-/*
+/**
  * Base interface for priority queue implementations for doubles. 
  * Throw exceptions as appropriate.
  */
 public interface PriorityQueue 
 {
-    /*
+    /**
      * Returns true if priority queue has no elements
      * 
      * @return true if the priority queue has no elements
@@ -18,7 +18,7 @@ public interface PriorityQueue
      */
     public int size();
 
-    /*
+    /**
      * Returns the minimum element in the priority queue
      * 
      * @return the minimum element
@@ -27,7 +27,7 @@ public interface PriorityQueue
      */
     public double findMin();
 
-    /*
+    /**
      * Inserts a new element into the priority queue. Duplicate values ARE
      * allowed.
      * 
@@ -36,7 +36,7 @@ public interface PriorityQueue
      */
     public void insert(double x);
 
-    /*
+    /**
      * Removes and returns the minimum element from the priority queue.
      * 
      * @return the minimum element
@@ -45,7 +45,7 @@ public interface PriorityQueue
      */
     public double deleteMin();
 
-    /*
+    /**
      * Resets the priority queue to appear as not containing any elements.
      */
     public void makeEmpty();

@@ -1,5 +1,5 @@
 /**
- * priority queue implemented as binary heap
+ * priority queue implemented as binary biHeap
  * @see  PriorityQueue.java
  * @author  FVCproductions
  * @since  2-19-15
@@ -7,15 +7,18 @@
  */
 
 public class BinaryHeap implements PriorityQueue {
+	
+	private final int DEF_SIZE = 10;
+	private final int DEF_INDEX = 1;
 		
-	private double[] heap;
+	private double[] biHeap;
 	private int size;
 	
 	/**  
 	 * creates priority queue that sorts elements according to natural ordering
 	 */
 	public BinaryHeap() {
-		this.heap = new double[10];
+		this.biHeap = new double[DEF_SIZE];
 		this.size = 0;
 	}
 	
@@ -40,41 +43,34 @@ public class BinaryHeap implements PriorityQueue {
 		if (this.isEmpty()) {
 			throw new EmptyPQException("priority queue is empty");
 		}		
-		return heap[1];
+		return biHeap[DEF_INDEX];
 	}
 
 	/**  
-	 * insert element into priority queue 
+	 * resize biHeap if not enough space
 	 * @param x [element to be inserted]
 	 */
 	public void insert(double x) {
-		// resize heap if not enough space
-		if (size >= heap.length - 1) {
+		if (size >= biHeap.length - 1) {
 			resize();
 		}
 		size++;
-		heap[size] = x;
+		biHeap[size] = x;
 		percolateUp();
 	}
 
 	/**  
-	 * removes and returns smallest element from priority queue
-	 * throws EmptyPQException if empty
+	 * grabs and removes smallest element
+	 * @throws EmptyPQException if empty
 	 * @return smallest element from priority queue
 	 */
 	public double deleteMin() {
 		if (this.isEmpty()) {
 			throw new EmptyPQException("priority queue is empty");
 		}
-		
-		// record min value
 		final double min = findMin();
-		
-		// remove min value
-		heap[1] = heap[size];
+		biHeap[DEF_INDEX] = biHeap[size];
 		size--;
-		
-		// restore heap property
 		percolateDown();
 		return min;
 	}
@@ -83,31 +79,29 @@ public class BinaryHeap implements PriorityQueue {
 	 * resets priority queue to empty
 	 */
 	public void makeEmpty() {
-		heap = new double[10];
+		biHeap = new double[DEF_SIZE];
 		size = 0;
 	}
 	
 	/**  
-	 * restores heap order property upon deletion of element
+	 * restores biHeap order property upon deletion of element
+	 * starts at index 1, or root
+	 * looks for smallest child first 
+	 * if smallest child is smaller than parent
+	 * 	then swaps with parent
+	 * 	otherwise stops looking
 	 */
 	private void percolateDown() {
-		// start at "root"
 		int index = 1;
-		
-		// look for smallest child
 		while (hasLeftChild(index)) {
 			int smallerChild = leftChild(index);
 			
-			if (hasRightChild(index) && heap[rightChild(index)] < heap[smallerChild]) {
+			if (hasRightChild(index) && biHeap[rightChild(index)] < biHeap[smallerChild]) {
 				smallerChild = rightChild(index);
 			}
-			
-			// if the smaller child is smaller than parent
-			if (heap[index] > heap[smallerChild]) {
-				// swap it with parent
+			if (biHeap[index] > biHeap[smallerChild]) {
 				trade(index, smallerChild);
 			} else {
-				// otherwise stop looking
 				break;
 			}
 			index = smallerChild;
@@ -115,72 +109,86 @@ public class BinaryHeap implements PriorityQueue {
 	}
 	
 	/**  
-	 * restores heap order property upon insertion of element
+	 * restores biHeap order property upon insertion of element
+	 * checks if nodes parents are greater than node
+	 * if so, swaps place and repeats process
 	 */
 	private void percolateUp() {
 		int index = size;
-		
-		// check if "node's" parent is greater
-		while (hasParent(index) && heap[index] < heap[parent(index)]) {
-			// swap places and keep looking
+		while (hasParent(index) && biHeap[index] < biHeap[parent(index)]) {
 			trade(index, parent(index));
 			index = parent(index);
 		}
 	}
 	
 	/**  
-	 * trade values of items in two indices
-	 * @param  index1  [index to trade with index2]
-	 * @param  index2  [index to trade with index1]
+	 * resize Binary Heap when not enough space
 	 */
-	private void trade(int index1, int index2) {
-		final double temp = heap[index1];
-		heap[index1] = heap[index2];
-		heap[index2] = temp;
+	private void resize() {
+		final double[] temp = new double[biHeap.length * 2];
+		for (int i = 0; i <= size; i++) {
+			temp[i] = biHeap[i];
+		}
+		biHeap = temp;
 	}
 	
 	/**  
-	 * resize BinaryHeap when not enough space
+	 * trade values of items in two indices
+	 * @param  index1  index of item to trade with index2
+	 * @param  index2  index of item to trade with index1
 	 */
-	private void resize() {
-		final double[] temp = new double[heap.length * 2];
-		for (int i = 0; i <= size; i++) {
-			temp[i] = heap[i];
-		}
-		heap = temp;
+	private void trade(int index1, int index2) {
+		final double temp = biHeap[index1];
+		biHeap[index1] = biHeap[index2];
+		biHeap[index2] = temp;
 	}
 	
-	// private methods with formulas to keep code clean
+	/**
+	 * @param  i [what is being checked]
+	 * @return true [if has left child]
+	 */
 	private boolean hasLeftChild(int i) {
 		return leftChild(i) <= size;
 	}
-	
+
+	/**
+	 * @param  i [what is being checked]
+	 * @return integer [of left child]
+	 */
 	private int leftChild(int i) {
-		return i * 3 - 1;
+		return i * 2;
 	}
 	
-	private boolean hasMiddleChild(int i) {
-		return middleChild(i) <= size;
-	}
-	
-	private int middleChild(int i) {
-		return i * 3;
-	}
-	
+	/**
+	 * @param  i [what is being checked]
+	 * @return true [if has right child]
+	 */
 	private boolean hasRightChild(int i) {
 		return rightChild(i) <= size;
 	}
-	
+
+	/**
+	 * @param  i [what is being checked]
+	 * @return integer [of right child]
+	 */
 	private int rightChild(int i) {
-		return i * 3 + 1;
+		return i * 2 + 1;
 	}
 	
+	/**
+	 * @param  i [what is being checked]
+	 * @return true [if has parent]
+	 */
 	private boolean hasParent(int i) {
 		return i > 1;
 	}
 	
+	/**
+	 * @param  i [what is being checked]
+	 * @return integer [of parent]
+	 */
 	private int parent(int i) {
-		return (i + 1) / 3;
+		return i / 2;
 	}
 
 }

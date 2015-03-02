@@ -8,12 +8,19 @@
 
 public class ThreeHeap implements PriorityQueue {
 	
-	private double[] threeHeap;	//array representation of  threeHeap
-	private int size;			//amount of elements in  priority queue
+	//setting default size and index
+	private final int DEF_SIZE = 10;
+	private final int DEF_INDEX = 1;
+
+	//array representation of threeHeap
+	private double[] threeHeap;	
+	
+	//amount of elements in priority queue
+	private int size;
 
 	//constructs priority queue ADT
 	public ThreeHeap() {
-		this.threeHeap = new double[10];
+		this.threeHeap = new double[DEF_SIZE];
 		this.size = 0;
 	}
 	
@@ -21,127 +28,189 @@ public class ThreeHeap implements PriorityQueue {
 	  * @return true if priority queue is empty, false otherwise
 	 */
 	public boolean isEmpty() {
-		return (this.size == 0);
+		return size() == 0;
 	}
 
 	/**  
 	 * @return # of elements in priority queue
 	 */	
 	public int size() {
-		return this.size;
+		return size;
 	}
 
 	/**
+	 * @throws [EmptyPQException] [if empty]
 	 * @return smallest element in priority queue, throws EmptyPQException otherwise
 	 */	
 	public double findMin() {
-		if (this.isEmpty()) {
-			throw new EmptyPQException();
+		if (isEmpty()) {
+			throw new EmptyPQException("priority queue is empty");
 		}
-		return this.threeHeap[1];
+		return threeHeap[DEF_INDEX];
 	}
 
 	/**  
-	 * insert element into priority queue 
 	 * @param x [element to be inserted]
 	 */
 	public void insert(double x) {
-		this.size++;
-		//resize if necessary
-		if (this.size == this.threeHeap.length) {
-			double[] bigHeap = new double[this.threeHeap.length * 2];
-			for (int i = 0; i < this.threeHeap.length; i++) {
-				bigHeap[i] = this.threeHeap[i];
-			}
-			this.threeHeap = bigHeap;
-		}
-		int index = percolateUp(this.size, x);
-		threeHeap[index] = x;	
+		if (size >= threeHeap.length - 1) {
+			resize();
+		}	
+		size++;
+		threeHeap[size] = x;
+		percolateUp();
 	}
 
 	/**  
-	 * removes and returns smallest element from priority queue
-	 * throws EmptyPQException if empty
+	 * grabs and then deletes minimum value
+	 * resets heap
 	 * @return smallest element from priority queue
+	 * @throws [EmptyPQException] [if empty]
 	 */
 	public double deleteMin() {
 		if (this.isEmpty()) {
-			throw new EmptyPQException();
+			throw new EmptyPQException("Priority Queue is empty.");
 		}
-		double min = threeHeap[1];
-		int hole = percolateDown(1, threeHeap[this.size]);
-		threeHeap[hole] = threeHeap[this.size];
-		this.size--;
+		final double min = findMin();
+		threeHeap[DEF_INDEX] = threeHeap[size];
+		size--;
+		percolateDown();
 		return min;
-		
 	}
 
 	/**  
 	 * resets priority queue to empty
 	 */
 	public void makeEmpty() {
-		this.threeHeap = new double[10];
-		this.size = 0;
+		threeHeap = new double[10];
+		size = 0;
 	}
-	
-	/**
-	 * excludes index at 0
-	 * @return [string representation of  three-heap as an array]
+
+	/**  
+	 * restores heap order property upon deletion of element
+	 * starts at index 1, or root
+	 * looks for smallest child first 
+	 * if smallest child is smaller than parent
+	 * 	then swaps with parent
+	 * 	otherwise stops looking
 	 */
-	//excludes index 0
-	public String toString() {
-		if (this.isEmpty()) {
-			return "top [] bottom";
-		} else {
-			String result = "top [";
-			for (int i = 1; i < this.size; i++) {
-				result += threeHeap[i] + ", " ;
+	private void percolateDown() {
+		int index = 1;
+		while (hasLeftChild(index)) {
+			int smallerChild = leftChild(index);
+			if (hasMiddleChild(index) && threeHeap[middleChild(index)] < threeHeap[smallerChild]) {
+				smallerChild = middleChild(index);
 			}
-			return result + threeHeap[size] + "] bottom";
+			if (hasRightChild(index) && threeHeap[rightChild(index)] < threeHeap[smallerChild]
+					) {
+				smallerChild = rightChild(index);
+			}
+			if (threeHeap[index] > threeHeap[smallerChild]) {
+				trade(index, smallerChild);
+			} else {
+				break;
+			}
+			index = smallerChild;
 		}
 	}
 	
 	/**  
 	 * restores heap order property upon insertion of element
+	 * checks if nodes parents are greater than node
+	 * if so, swaps place and repeats process
 	 */
-	private int percolateUp(int hole, double val) {
-		while (hole > 1 && val < threeHeap[(hole + 1) / 3]) {
-			threeHeap[hole] = threeHeap[(hole + 1) / 3];
-			hole = (hole + 1) / 3;
+	private void percolateUp() {
+		int index = size;
+		while (hasParent(index) && threeHeap[index] < threeHeap[parent(index)]) {
+			trade(index, parent(index));
+			index = parent(index);
 		}
-		return hole;
 	}
 	
 	/**  
-	 * restores heap order property upon deletion of element
+	 * resize Binary Heap when not enough space
 	 */
-	private int percolateDown(int hole, double val) {
-		int left;
-		int mid;
-		int right;
-		int target;
-		
-		while (3 * hole - 1 <= this.size) {
-			left = hole * 3 - 1;
-			mid = left + 1;
-			right = left + 2;
-			if (mid > this.size ||
-			(threeHeap[left] < threeHeap[mid] && threeHeap[left] < threeHeap[right])) {
-				target = left;
-			} else if (right > this.size ||
-			threeHeap[mid] < threeHeap[left] && threeHeap[mid] < threeHeap[right]){
-				target = mid;
-			} else {
-				target = right;
-			}
-			if (threeHeap[target] < val) { 
-				threeHeap[hole] = threeHeap[target];
-				hole = target;
-			} else {
-				break;
-			}
+	private void resize() {
+		final double[] temp = new double[threeHeap.length * 2];
+		for (int i = 0; i <= size; i++) {
+			temp[i] = threeHeap[i];
 		}
-		return hole;
+		threeHeap = temp;
 	}
-}
+	
+	/**  
+	 * trade values of items in two indices
+	 * @param  index1  index of item to trade with index2
+	 * @param  index2  index of item to trade with index1
+	 */
+	private void trade(int index1, int index2) {
+		final double temp = threeHeap[index1];
+		threeHeap[index1] = threeHeap[index2];
+		threeHeap[index2] = temp;
+	}
+	
+	/**
+	 * @param  i [what is being checked]
+	 * @return true [if has left child]
+	 */
+	private boolean hasLeftChild(int i) {
+		return leftChild(i) <= size;
+	}
 
+	/**
+	 * @param  i [what is being checked]
+	 * @return integer of left child
+	 */
+	private int leftChild(int i) {
+		return i * 3 - 1;
+	}
+	
+	/**
+	 * @param  i [what is being checked]
+	 * @return true [if has middle child]
+	 */
+	private boolean hasMiddleChild(int i) {
+		return middleChild(i) <= size;
+	}
+
+	/**
+	 * @param  i [what is being checked]
+	 * @return integer of middle child
+	 */
+	private int middleChild(int i) {
+		return i * 3;
+	}
+	
+	/**
+	 * @param  i [what is being checked]
+	 * @return true [if has right child]
+	 */
+	private boolean hasRightChild(int i) {
+		return rightChild(i) <= size;
+	}
+	
+	/**
+	 * @param  i [what is being checked]
+	 * @return integer of right child
+	 */
+	private int rightChild(int i) {
+		return i * 3 + 1;
+	}
+	
+	/**
+	 * @param  i [what is being checked]
+	 * @return true [if has parent]
+	 */
+	private boolean hasParent(int i) {
+		return i > 1;
+	}
+	
+	/**
+	 * @param  i [what is being checked]
+	 * @return integer of parent
+	 */
+	private int parent(int i) {
+		return (i + 1) / 3;
+	}
+
+}

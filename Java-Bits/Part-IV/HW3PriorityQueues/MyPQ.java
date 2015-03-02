@@ -10,19 +10,23 @@
 
 public class MyPQ implements PriorityQueue {
 
-    private ListNode front; //front element in  priority queue
-    private int size; //amount of elements in  priority queue
+    //front element in  priority queue
+    private ListNode front;
+    //amount of elements in  priority queue
+    private int size; 
 
-    //support class that creates  next element to be inserted into  priority queue
+    //support class that creates next element to be inserted into priority queue
     class ListNode {
-        public ListNode next; //next element in  priority queue
-        public double data; //value to be kept track of
+       
+        //next element in  priority queue
+        public ListNode next; 
+        //value to be kept track of
+        public double data; 
 
         /**
          * constructs list node with a given value and next node
          * @param  data [given value]
          * @param  next [next node]
-         * @return      [N/A]
          */
         public ListNode(double data, ListNode next) {
             this.data = data;
@@ -46,17 +50,23 @@ public class MyPQ implements PriorityQueue {
         this.size = 0;
     }
 
-    //returns true if no elements present
+    /**
+     * @return [true if no elements present]
+     */
     public boolean isEmpty() {
         return (front == null);
     }
 
-    //returns # of elements
+    /**
+     * @return [# of elements]
+     */
     public int size() {
         return this.size;
     }
 
-    //returns smallest #
+    /**
+     * @return [smallest #]
+     */
     public double findMin() {
         if (this.isEmpty()) {
             throw new EmptyPQException();
@@ -65,8 +75,7 @@ public class MyPQ implements PriorityQueue {
     }
 
     /**
-     * inserts new element into priority queue
-     * @param  x [value to be inserted]
+     * @param x [value to be inserted]
      */
     public void insert(double x) {
         if (front == null) {
@@ -85,7 +94,9 @@ public class MyPQ implements PriorityQueue {
         this.size++;
     }
 
-    //removes and returns minimum element
+    /**
+     * @return [smallest element]
+     */
     public double deleteMin() {
         if (this.isEmpty()) {
             throw new EmptyPQException();

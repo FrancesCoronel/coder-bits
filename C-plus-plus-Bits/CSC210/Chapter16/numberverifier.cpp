@@ -1,5 +1,19 @@
 /**
  * FVCproductions
+ * ---
+ * Part 1
+ * Write a short program that reads a number from the user and stores the number as a string of characters. 
+ * Convert this string to an integer. 
+ * Before conversion, test for a NonNumber exception, which occurs if one or more of the characters is not a digit. 
+ * Your program should allow negative numbers.
+ * ---
+ * Tips
+ * 	1) To determine whether the input is a valid number, the program checks for any non-digit character in the input string. The only non-digit character is allowed is a minus sign (-) at the beginning of the string.
+ * 	2) Make sure that any code that could throw an exception is enclosed within a try statement with a matching catch handler.  Must create an exception class, call it ABC_NonNumber; where ABC is your initials. You may put this in the same cpp file.
+ * 	---
+ * 	Part 2
+ * 	Modify your program and create an exception class called ABC_Overflow for detecting when the input has more than 10 digits. 
+ * 	You may put this in the same cpp file.
  */
 
 // Lab Chapter 16: numberverifier.cpp

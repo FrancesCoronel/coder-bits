@@ -8,7 +8,7 @@ Author: FVCproductions
 
 ---
 
-# Questions
+# QUESTIONS
 
 1. **For your DisjointSets implementation, what is the worst case running time of a single union operation?**
 
@@ -24,7 +24,7 @@ I just used my debugger, CodeRunner, to test the project throughout. Several met
 
 4. **Discuss whether your implementation can build a 1000 x 1000 maze in a reasonable amount of time (and discuss what you consider reasonable).  If not, describe what part of your implementation you believe is taking too much time and why you think that is the problem.  If so, describe how a change to your code might slow down the creation of a maze of this size and why you expect such a change to matter.**
 
-Yes, this 1000x1000 maze was built in no time on my MBA (Macbook Air). It took approximately 6 seconds and 141 milliseconds. But when I look at the result, it looks nothing like a maze since my screen is too small to handle the width and height of it. Oh well.
+Yes, this 1000x1000 maze was built in no time on my MBA (Macbook Air). It took approximately 6 seconds and 141 milliseconds. But when I look at the result, it looks nothing like a maze since my screen is too small to handle the width and height of it. Oh, well.
 
 I think that if I had used a single 2-D array instead of 2 boolean arrays, it would have probably taken a longer time since there would be more operation redundancy.
 

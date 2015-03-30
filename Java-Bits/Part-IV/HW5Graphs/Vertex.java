@@ -1,8 +1,9 @@
 /*
  * Representation of a graph vertex
  */
-public class Vertex 
+public class Vertex
 {
+	// final condition may be required < < < 
 	// label attached to this vertex
 	private String label;
 

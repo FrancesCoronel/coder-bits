@@ -42,8 +42,27 @@ public class FindPaths
 				System.exit(1);
 			}
 			
-			// YOUR CODE HERE: call shortestPath and print
-			// out the result
+			/**
+			 * YOUR CODE HERE
+			 * call shortestPath and print out the result
+			 */
+			
+			System.out.println("Shortest Path From " + a.toString() + " To " + b.toString() + ": ");
+			Path path = g.shortestPath(a, b);
+			if (path == null) 
+			{
+				System.out.println("DNE (does not exist)");
+			}
+			else 
+			{
+				for (Vertex theVertex : path.vertices)
+				{
+					System.out.println(theVertex + " ");
+				}
+				System.out.println();
+				System.out.println(path.cost);
+			}
+			
 		}
 	}
 

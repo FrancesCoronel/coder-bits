@@ -3,6 +3,7 @@
  */
 public class Edge 
 {
+	// to note: final condition may be required < < < 
 	private Vertex from, to;
 	private int w;
 

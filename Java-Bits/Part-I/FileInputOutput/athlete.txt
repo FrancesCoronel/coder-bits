@@ -1,2 +1,0 @@
-Athlete Name: Vincent  Sport: Running
-Athlete Name: Charlie Brown  Sport: Rowing

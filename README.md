@@ -5,7 +5,7 @@
 
 ## License &copy;
 
-Copyright is free for personal and commercial use. 
+Copyright is free for personal and commercial use.
 
 ## Description
 
